@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
@@ -7,7 +6,7 @@ const getWeather = require('./utils/getweather');
 
 //Init app
 const app = express();
-const port = process.env.SERVER_PORT || 3000
+const port = process.env.PORT || 3000
 
 //Define path for express config
 const publicDirectoryPath = path.join(__dirname,"../public");
