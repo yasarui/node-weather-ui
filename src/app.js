@@ -4,14 +4,15 @@ const path = require('path');
 const hbs = require('hbs');
 const geoCode = require('./utils/geocode');
 const getWeather = require('./utils/getweather');
+
 //Init app
 const app = express();
+const port = process.env.SERVER_PORT || 3000
 
 //Define path for express config
 const publicDirectoryPath = path.join(__dirname,"../public");
 const viewsPath = path.join(__dirname,"../templates/views");
 const partialsPath = path.join(__dirname,"../templates/partials");
-
 
 //Static assets and Handlebars config
 app.use(express.static(publicDirectoryPath));
@@ -61,7 +62,7 @@ app.get("*",(req,res)=>{
     });
 });
 
-const port = process.env.SERVER_PORT
+
 
 
 app.listen(port,()=>{
